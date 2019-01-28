@@ -1,0 +1,165 @@
+@tailwind preflight
+
+@tailwind components
+
+// Variables
+@import "variables";
+
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito|Raleway:300,400,600');
+
+.no-js #loader {
+    display: none;
+}
+
+.js #loader {
+    display: block;
+    position: absolute;
+    left: 100px;
+    top: 0;
+}
+a:hover {
+    text-decoration: none !important;
+}
+
+#app {
+    // display: none;
+}
+
+.c-title {
+    background-color: rgba(0,0,0,0.3);
+    @apply py-4;
+}
+.c-navbar {
+    width: 20%;
+}
+.c-lists .dropdown a:focus {
+    @apply text-yellow bg-black no-underline;
+}
+.c-lists {
+    &__link {
+        transition: 0.5s all;
+        &:hover {
+            @apply no-underline text-yellow;
+            background-color: rgba(0, 0, 0, 0.3);
+            transition: 0.5s all;
+        }
+    }
+    &--drop-link {
+        &:hover {
+            background-color: rgba(255,255,255,0.8);
+            color: red;
+            transition: 0.5s all;
+        }
+    }
+}
+.active {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+.task-button {
+    transition: 0.5s all;
+}
+.task-button:hover {
+    transition: 0.5s all;
+    @apply text-white;
+}
+.menu-drop .dropdown-menu {
+    transform: translate3d(0, 40px, 0px) !important;
+}
+
+.se-pre-con {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(192, 192, 192, 0.5);
+    background-image: url("http://i.stack.imgur.com/MnyxU.gif");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+main {
+    width: 80%;
+    @apply ml-auto;
+}
+.modal-backdrop {
+    background-color: rgba(0,0,0,0.4) !important;
+}
+.c-user-table {
+    @apply w-full py-6;
+}
+.show {
+    opacity: 1 !important;
+}
+.modal.fade .modal-dialog {
+    transform: none !important;
+}
+// .checkbox input[type="checkbox"] {
+//     display: none;
+// }
+// .checkbox {
+//     user-select: none;
+// }
+// .checkbox .but {
+//     text-align: center;
+//     width: 20px;
+//     height: 20px;
+//     border: solid 1px black;
+//     display: inline-block;
+// }
+// .checkbox input:checked + .but {
+//     background-color: red;
+// }
+
+/* Base for label styling */
+[type="checkbox"]:not(:checked),
+[type="checkbox"]:checked {
+  position: absolute;
+  left: -9999px;
+}
+[type="checkbox"]:not(:checked) + label,
+[type="checkbox"]:checked + label {
+  position: relative;
+  padding-left: 1.95em;
+  cursor: pointer;
+}
+
+/* checkbox aspect */
+[type="checkbox"]:not(:checked) + label:before,
+[type="checkbox"]:checked + label:before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0;
+  width: 1.25em; height: 1.25em;
+  border: 2px solid #ccc;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,.1);
+}
+/* checked mark aspect */
+[type="checkbox"]:not(:checked) + label:after,
+[type="checkbox"]:checked + label:after {
+  content: '\2713\0020';
+  position: absolute;
+  top: .15em; left: .22em;
+  font-size: 1.3em;
+  line-height: 0.8;
+  color: #09ad7e;
+  transition: all .2s;
+  font-family: 'Lucida Sans Unicode', 'Arial Unicode MS', Arial;
+}
+/* checked mark aspect changes */
+[type="checkbox"]:not(:checked) + label:after {
+  opacity: 0;
+  transform: scale(0);
+}
+[type="checkbox"]:checked + label:after {
+  opacity: 1;
+  transform: scale(1);
+}
+@tailwind utilities
